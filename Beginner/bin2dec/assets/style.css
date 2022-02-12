@@ -1,0 +1,28 @@
+.container {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.errorMessage {
+  margin-top: 10px;
+  display: block;
+  color: #dc3545;
+  font-size: 20px;
+}
+
+#btnConvert {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 200, 0, 0.20);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 250, 0, 0.20),
+    rgba(0, 200, 0, 0.40),
+    rgba(0, 150, 0, 0.60),
+    rgba(0,100,0,80) 100%
+  );
+}

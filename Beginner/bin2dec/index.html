@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>Bin2Dec</title>
 </head>
+
 <body>
     <title>Bin2Dec</title>
 
-    <input type="text" name="bin" id="binNumber" min="0" max="1" maxlength="8">
-    <input type="button" value="Convert" id="btnConvert">
-    <input type="text" name="dec" id="decNumber" disabled>
-    <input type="button" value="Clear" id="btnClear">
-    <script src="assets/js/script.js"></script>
+    <div id="bin2dec" class="container">
+        <input type="text" name="bin" id="binNumber" maxlength="8">
+        <input type="button" value="Convert" id="btnConvert" disabled>
+        <input type="text" name="dec" id="decNumber" disabled>
+        <input type="button" value="Clear" id="btnClear">
+    </div>
+    <script src="assets/script.js"></script>
 </body>
+
 </html>
