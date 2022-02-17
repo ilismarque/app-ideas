@@ -6,7 +6,7 @@ let div = document.getElementById("bin2dec");
 
 let error_message = document.createElement("span");
 error_message.textContent = 'Apenas 0 e 1 podem ser digitados';
-error_message.classList.add('errorMessage');
+// error_message.classList.add('errorMessage');
 
 bin_number.addEventListener('keypress', (event) => {
     if (!event.key.match("[01]")) {
@@ -24,7 +24,9 @@ function showErrorMessage() {
 }
 
 function hideErrorMessage() {
-    div.removeChild(error_message);
+    if (document.querySelector("span")) {
+        div.removeChild(error_message);
+    }
 }
 
 btn_convert.addEventListener("click", () => {
@@ -35,6 +37,7 @@ btn_clear.addEventListener("click", () => {
     bin_number.value = null;
     dec_number.value = null;
     btn_convert.setAttribute('disabled', 'disabled');
+    hideErrorMessage();
 
 });
 

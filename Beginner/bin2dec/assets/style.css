@@ -1,28 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+body {
+  font-family: 'Ubuntu Mono', monospace;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+    url("/bin2dec/img/binary.jpg");
+}
+
+input[type="text"] {
+  /* border-radius: 5px; */
+  letter-spacing: 30px;
+  text-align: center;
+  font-size: 40px;
+  height: 60px;
+  width: 450px;
+  margin: 20px;
+}
+
+span {
+  margin-bottom: 20px;
+  display: block;
+  color: #ffffff;
+  font-size: 30px;
+}
+
 .container {
-  height: 150px;
+  margin-top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
 
+.button {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 250, 0, 0.2),
+    rgba(0, 200, 0, 0.4),
+    rgba(0, 150, 0, 0.6),
+    rgba(0, 100, 0, 80) 100%
+  );
 }
 
 .errorMessage {
   margin-top: 10px;
   display: block;
-  color: #dc3545;
+  color: #ffffff;
   font-size: 20px;
-}
-
-#btnConvert {
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 200, 0, 0.20);
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 250, 0, 0.20),
-    rgba(0, 200, 0, 0.40),
-    rgba(0, 150, 0, 0.60),
-    rgba(0,100,0,80) 100%
-  );
 }
