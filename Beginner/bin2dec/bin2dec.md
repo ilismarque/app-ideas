@@ -30,3 +30,5 @@ constraints:
 - [ ] User can enter a variable number of binary digits
 
 ## From [app-Ideas](https://github.com/florinpop17/app-ideas)
+
+## View the project online at [ilis-bin2dec.surge.sh](https://ilis-bin2dec.surge.sh/)
