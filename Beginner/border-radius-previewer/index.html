@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Border Radius Previewer</title>
+</head>
+
+<body>
+    <header>
+        <h1>Border Radius Previewer</h1>
+    </header>
+    <div class="container">
+        <div>
+            <label for="selectoptions">Select a value</label>
+            <select name="selectoptions" id="selectoptions">
+                <option value="px">px</option>
+                <option value="%">%</option>
+            </select>
+        </div>
+        <div class="inputs">
+            <div class="input-group">
+                <label for="borderTopLeft">Border top-left</label>
+                <input type="text" name="borderTop" id="borderTopLeft" maxlength="3">
+                <!-- <span>px</span> -->
+            </div>
+            <div class="input-group">
+                <label for="borderTopRight">Border top-right</label>
+                <input type="text" name="borderTopRight" id="borderTopRight" maxlength="3">
+                <!-- <span>px</span> -->
+            </div>
+            <div class="input-group">
+                <label for="borderBottomRight">Border bottom-right</label>
+                <input type="text" name="borderBottomRight" id="borderBottomRight" maxlength="3">
+                <!-- <span>px</span> -->
+            </div>
+            <div class="input-group">
+                <label for="borderBottomLeft">Border bottom-left</label>
+                <input type="text" name="borderBottomLeft" id="borderBottomLeft" maxlength="3">
+                <!-- <span>px</span> -->
+            </div>
+        </div>
+        <div>
+            <div id="boxBorderPreview">
+                <div id="borderPreview">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

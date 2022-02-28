@@ -1,0 +1,36 @@
+
+.container {
+    border: 1px solid #000000;
+    width: 550px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputs {
+    margin-top: 20px;
+}
+.input-group label{
+    display: inline-block;
+    width: 130px;
+}
+
+.input-group input {
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    width: 30px;
+}
+#boxBorderPreview{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+#borderPreview {
+    background: red;
+    width: 100%;
+    height: 100%;
+}
