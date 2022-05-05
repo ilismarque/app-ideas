@@ -1,31 +1,78 @@
-let brdTopLeft = document.getElementById("borderTopLeft");
-let brdTopRight = document.getElementById("borderTopRight");
-let brdBotLetf = document.getElementById("borderBottomLeft");
-let brdBotRight = document.getElementById("borderBottomRight");
-let brdPreview = document.getElementById("borderPreview");
-let select = document.getElementById("selectoptions");
-let option;
+const brdTopLeft = document.getElementById("borderTopLeft");
+const brdTopRight = document.getElementById("borderTopRight");
+const brdBotLetf = document.getElementById("borderBottomLeft");
+const brdBotRight = document.getElementById("borderBottomRight");
+const brdPreview = document.getElementById("borderPreview");
+const cssCode = document.getElementById("cssCode");
+const btnCopyCode = document.getElementById("btnCopyCode");
 
-select.addEventListener("change", () => {
-    option = select.options[select.options.selectedIndex].value;
-});
+const borders = {
+  'border-top-left-radius': null,
+  'border-top-right-radius': null,
+  'border-bottom-right-radius': null,
+  'border-bottom-left-radius': null
+}
 
-console.log(option);
 
 brdTopLeft.addEventListener("keyup", () => {
-console.log(option);
-
-  brdPreview.style.borderTopLeftRadius = `${brdTopLeft.value}${option}`;
+  let value = brdTopLeft.value > 0 ? brdTopLeft.value : 0;
+  brdPreview.style.borderTopLeftRadius = `${value}px`;
+  borders['border-top-left-radius'] = value;
+  displayCssResult();
 });
 
 brdTopRight.addEventListener("keyup", () => {
-  brdPreview.style.borderTopRightRadius = `${brdTopRight.value}px`;
+  let value = brdTopRight.value > 0 ? brdTopRight.value : 0;
+  brdPreview.style.borderTopRightRadius = `${value}px`;
+  borders['border-top-right-radius'] = value;
+  displayCssResult();
 });
 
 brdBotRight.addEventListener("keyup", () => {
-  brdPreview.style.borderBottomLeftRadius = `${brdBotRight.value}px`;
+  let value = brdBotRight.value > 0 ? brdBotRight.value : 0;
+  brdPreview.style.borderBottomRightRadius = `${value}px`;
+  borders['border-bottom-right-radius'] = value;
+  displayCssResult();
 });
 
 brdBotLetf.addEventListener("keyup", () => {
-  brdPreview.style.borderBottomRightRadius = `${brdBotLetf.value}px`;
+  let value = brdBotLetf.value > 0 ? brdBotLetf.value : 0;
+  brdPreview.style.borderBottomLeftRadius = `${value}px`;
+  borders['border-bottom-left-radius'] = value;
+  displayCssResult();
 });
+
+function displayCssResult() {
+  cssCode.innerText = '';
+  let count = 0;
+  for (const key in borders) {
+    if (borders[key]) {
+      cssCode.innerText += `${key}: ${borders[key]}px;\n`;
+      count++;
+    }
+  }
+  enableBtnCopy(count);
+}
+
+function enableBtnCopy(count) {
+  if (count) {
+    btnCopyCode.removeAttribute('disabled');
+  } else {
+    btnCopyCode.setAttribute('disabled', 'disabled');
+  }
+}
+
+//Adapted from https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+
+function copyCode() {
+  const copyText = document.getElementById("cssCode");
+  navigator.clipboard.writeText(copyText.outerText);
+
+  const tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "<i class='fa fa-check-circle'></i> Copied";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
