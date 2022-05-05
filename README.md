@@ -11,4 +11,5 @@ This repository was created to implement a collection of projects based on the [
 |Name    | Short Description |
 ---------|-------------------|
 |[Bin2Dec](https://github.com/ilismarque/app-ideas/blob/main/Beginner/bin2dec/bin2dec.md) |Binary-to-Decimal number converter|
+|[Border Radius Previewer](https://github.com/ilismarque/app-ideas/blob/main/Beginner/border-radius-previewer/border-radius.md) |Preview how CSS3 border-radius values affect an element|
 </details>
