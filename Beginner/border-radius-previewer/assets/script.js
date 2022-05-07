@@ -5,6 +5,7 @@ const brdBotRight = document.getElementById("borderBottomRight");
 const brdPreview = document.getElementById("borderPreview");
 const cssCode = document.getElementById("cssCode");
 const btnCopyCode = document.getElementById("btnCopyCode");
+const btnClearClipBoard = document.getElementById("btnClearClipBoard");
 
 const borders = {
   'border-top-left-radius': null,
@@ -51,14 +52,16 @@ function displayCssResult() {
       count++;
     }
   }
-  enableBtnCopy(count);
+  changeButtonsState(count);
 }
 
-function enableBtnCopy(count) {
+function changeButtonsState(count) {
   if (count) {
     btnCopyCode.removeAttribute('disabled');
+    btnClearClipBoard.removeAttribute('disabled');
   } else {
     btnCopyCode.setAttribute('disabled', 'disabled');
+    btnClearClipBoard.setAttribute('disabled', 'disabled');
   }
 }
 
@@ -73,6 +76,19 @@ function copyCode() {
 }
 
 function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
+  const tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copy to clipboard";
+}
+
+function clearBorders() {
+  cssCode.innerText = '';
+
+  const inputs = document.getElementsByClassName('borderInput');
+
+  for (const key in inputs) {
+    inputs[key].value = '';
+  }
+
+  brdPreview.style.borderRadius = '0px';
+  changeButtonsState(null);
 }
