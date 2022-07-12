@@ -89,6 +89,10 @@ function clearBorders() {
     inputs[key].value = '';
   }
 
+  for (const key in borders) {
+    borders[key] = null;
+  }
+
   brdPreview.style.borderRadius = '0px';
   changeButtonsState(null);
 }
